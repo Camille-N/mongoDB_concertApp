@@ -1,0 +1,28 @@
+extends ../gabarit.pug
+
+block content
+    div(class="col-6 border border-dark" id="block")
+
+        div(class="container")
+            div(class="row")
+                div(class="col")
+                    h1(class="mt-2") Liste des concerts
+                div(class="col")    
+                    a(href="/concert/form" class="btn btn-warning btn-block mt-2 mb-2 shadow") Ajouter un concert
+
+       
+            table(class="table table-bordered table-striped")
+                tr
+                    th Date
+                    th Lieu
+                    th Groupe
+                    th Note
+                    th 
+                each concert in concertlist
+                    tr
+                        td=concert.concertDate.toDateString()
+                        td=concert.lieu
+                        td=concert.groupe
+                        td=concert.note
+                        td
+                            a(href="/concert/delete/" + concert._id class="btn btn-danger") Supprimer

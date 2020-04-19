@@ -1,0 +1,52 @@
+extends ../gabarit.pug
+
+block content
+    div(class="col-6 border border-dark" id="block")
+
+        h1(class="mt-2 text-center") Nouveau concert
+        form(method="post" action=concertAction)
+                        
+            
+            div(class="container")
+                div(class="row")
+                    div(class="col")
+                        label(for="lieu") Lieu
+                        select(class="form-control" name="lieu" id="lieu" value=concert.lieu)
+                            option(value="" disabled selected) Choisir un lieu
+                            option La Cigalle
+                            option Le Bataclan
+
+                    div(class="col")
+                        label(for="groupe") Groupe
+                        select(class="form-control" name="groupe" id="groupe" value=concert.groupe)
+                            option(value="" disabled selected) Choisir un groupe
+                            option(value="Dropkick Murphys") Dropkick Murphys
+                            option(value="Flogging Molly") Flogging Molly
+                            option(value="The Rumjacks") The Rumjacks
+                            option(value="Fiddler's green") Fiddler's green
+
+            
+            div(class="container")
+                div(class="row")
+                    div(class="col")
+                        label(for="concertDate") Date
+                        input(class="form-control" type="date" name="concertDate" id="concertDate" value=concert.concertDate)
+
+        
+                    div(class="col")
+                        label(for="note") Note
+                        select(class="form-control" name="note" id="note" value=concert.note)
+                            option(value="" disabled selected) Choisir une note
+                            option(value="1") 1
+                            option(value="2") 2
+                            option(value="3") 3
+                            option(value="4") 4
+                            option(value="5") 5
+                            option(value="6") 6
+                            option(value="7") 7
+                            option(value="8") 8
+                            option(value="9") 9
+                            option(value="10") 10
+            
+            div(class="container")
+                button(class="btn btn-warning mt-3 mb-3 shadow" type="submit") Valider
